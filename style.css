@@ -147,7 +147,7 @@ section p {
 
 #next-btn {
   position: absolute;
-  right: 25%;
+  right: 650px;
   top: 50%;
 }
 
@@ -164,6 +164,38 @@ section p {
 #photo-roll-navigation button:hover {
   scale: 8.5;
   transition-duration: 200ms;
+}
+
+.image-container {
+  display: flex;
+}
+
+.image-descriptor {
+  max-width: 200px;
+  background-color: rgb(107, 0, 0);
+  color: white;
+  margin: 10px;
+  visibility: collapse;
+  position: absolute;
+}
+
+.image-container .selected {
+  visibility: visible;
+  position: relative;
+}
+
+.image-descriptor h2 {
+  margin: 0;
+  padding: 10px;
+}
+
+.image-descriptor-header {
+  background-color: maroon;
+  color: white;
+}
+
+.image-descriptor-description {
+  margin: 10px;
 }
 
 /* 

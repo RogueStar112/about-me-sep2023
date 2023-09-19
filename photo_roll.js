@@ -2,6 +2,15 @@ let photoIndex = 0;
 
 let photoList = ["img_1", "img_2", "img_3", "img_4", "img_5", "img_6"];
 
+let descriptionList = [
+  "desc_1",
+  "desc_2",
+  "desc_3",
+  "desc_4",
+  "desc_5",
+  "desc_6",
+];
+
 let unselectedPhotos = document.querySelectorAll(".unselected");
 
 let photoRoll = document.getElementById("photo-roll");
@@ -33,13 +42,19 @@ function prevPhoto() {
   console.log(photoList[photoIndex]);
 
   let photoSelected = document.getElementById(photoList[photoIndex]);
+  let descriptionSelected = document.getElementById(
+    descriptionList[photoIndex]
+  );
 
   for (i = 0; i < photoList.length; i++) {
     if (i != photoIndex) {
       let photoSelected = document.getElementById(photoList[i]);
+
       photoSelected.classList.remove("selected");
+      descriptionSelected.classList.remove("selected");
     } else {
       photoSelected.classList.add("selected");
+      descriptionSelected.classList.add("selected");
     }
   }
 
@@ -56,6 +71,11 @@ function nextPhoto() {
   photoIndex += 1;
 
   let photoSelected = document.getElementById(photoList[photoIndex]);
+  let descriptionSelected = document.getElementById(
+    descriptionList[photoIndex]
+  );
+
+  console.log("Description selected " + descriptionList[photoIndex]);
 
   if (photoIndex > photoList.length - 1) {
     console.log("Photo limit exceeded");
@@ -66,9 +86,13 @@ function nextPhoto() {
     for (i = 0; i < photoList.length; i++) {
       if (i != photoIndex) {
         let photoSelected = document.getElementById(photoList[i]);
+        let descriptionSelected = document.getElementById(descriptionList[i]);
+
         photoSelected.classList.remove("selected");
+        descriptionSelected.classList.remove("selected");
       } else {
         photoSelected.classList.add("selected");
+        descriptionSelected.classList.add("selected");
       }
     }
 
@@ -78,6 +102,7 @@ function nextPhoto() {
     photoRoll.style.left = `-${photoPosition}` + "px";
 
     console.log(`PHOTOSELECTED OFFSETWIDTH: ${photoPosition}`);
+    console.log("PHOTO INDEX: " + photoIndex);
   }
 
   // console.log(photoList[photoIndex]);
