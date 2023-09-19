@@ -1,5 +1,7 @@
 let points = 0;
 
+let q_name = prompt("What is your name?");
+
 let q1 = prompt("Demie has worked before in archaeology. Yes/No?");
 
 if (q1.toLowerCase() == "n" || q1.toLowerCase == "no") {

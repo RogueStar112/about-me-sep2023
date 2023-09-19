@@ -2,10 +2,60 @@ body {
   /* background-color: #7f1d1d; */
   max-width: 1024px;
   margin: 0 auto;
+  background-color: grey;
+}
+
+header {
+  display: flex;
+  font-variant: small-caps;
+  border-bottom: 3px solid white;
+}
+
+header nav {
+  display: flex;
+  gap: 10px;
+  place-items: center;
+}
+
+nav a {
+  background-color: maroon;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+}
+
+#header-title {
+  width: 100%;
 }
 
 article {
   max-width: 65%;
+}
+
+main {
+  position: relative;
+}
+
+#photo-roll {
+  display: flex;
+  gap: 20px;
+}
+
+#photo-roll img {
+  max-height: 192px;
+}
+
+#photo-roll img {
+  filter: blur(5px);
+}
+
+#photo-roll .selected {
+  filter: none;
+}
+
+#photo-roll-navigation {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* 

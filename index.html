@@ -7,12 +7,21 @@
     <link rel="stylesheet" href="style.css" />
 
     <script src="app.js" defer></script>
+    <script src="photo_roll.js" defer></script>
   </head>
 
   <body>
     <header>
-      <h1>Demie Mistica</h1>
+      <h1 id="header-title">Demie Mistica</h1>
+
+      <nav>
+        <a href="">Home</a>
+        <a href="">Quiz</a>
+        <a href="">Facts</a>
+      </nav>
     </header>
+
+    <hr class="" />
 
     <main>
       <article id="biography" aria-label="biography">
@@ -23,7 +32,9 @@
             I am 24 years old, and I enjoy taking walks and listening to
             music!<br />
             I can be quite talkative, and get overwhelmed at times, but I do
-            what I can!
+            what I can!<br />
+            I'm surrounded by gadgets. Feel free to click on parts of my face to
+            find out more about each gadget! (WIP)
           </p>
         </section>
       </article>
@@ -35,20 +46,49 @@
           id="education-history-text"
           aria-label="education-history-text"
         >
-          <p></p>
+          <p>
+            I have done GCSEs and A-Levels. Though, I don't have very fond
+            experiences of education. It's not the end of the world for my poor
+            grades.
+          </p>
         </section>
       </article>
 
       <article id="job-experience" aria-label="job-experience">
         <h2>Job Experience</h2>
+
+        <p>
+          I have initially started volunteering in Mind, a mental health
+          charity. This was before COVID.
+        </p>
+
+        <p>
+          Then, I worked at Domino's Pizza for 3 gruelling years. After getting
+          burnt out from this job, I decided it was best for me to find a job I
+          could do at the comfort of my own home, such as web development.
+        </p>
       </article>
 
       <article id="my-goals" aria-label="my-goals">
         <h2>My Goals</h2>
+
+        <p>
+          I want to become a web developer, and be able to embrace new
+          technologies as they arrive.
+        </p>
       </article>
 
-      <div id="fun-quiz">
-        <!-- <button>Click here for a quiz!</button> -->
+      <div id="photo-roll" aria-label="photo-roll">
+        <img class="selected" id="img_1" src="images/me1.jpg" alt="" />
+        <img class="unselected" id="img_2" src="images/forest2.JPG" alt="" />
+        <img class="unselected" id="img_3" src="images/photo3.JPG" alt="" />
+        <img class="unselected" id="img_4" src="images/nature4.png" alt="" />
+        <img class="unselected" id="img_5" src="images/me5.JPG" alt="" />
+      </div>
+
+      <div id="photo-roll-navigation">
+        <button onClick="prevPhoto()">Prev Image</button>
+        <button onClick="nextPhoto()">Next Image</button>
       </div>
     </main>
 
