@@ -1,0 +1,16 @@
+body {
+  /* background-color: #7f1d1d; */
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+article {
+  max-width: 65%;
+}
+
+/* 
+Note; Colours taken from Tailwind
+
+Source: https://tailwind-to-css.vercel.app/
+
+*/
