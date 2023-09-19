@@ -1,8 +1,9 @@
 body {
   /* background-color: #7f1d1d; */
-  max-width: 1024px;
+  max-width: 1280px;
   margin: 0 auto;
   background-color: grey;
+  position: relative;
 }
 
 header {
@@ -38,6 +39,7 @@ main {
 
 #photo-roll {
   display: flex;
+  align-content: center;
   gap: 20px;
 }
 
@@ -49,13 +51,30 @@ main {
   filter: blur(5px);
 }
 
+#photo-roll-container {
+  width: 100vw;
+}
+
+#photo-roll {
+  position: absolute;
+  left: 0;
+  transition-duration: 400ms;
+}
+
 #photo-roll .selected {
   filter: none;
+  max-height: 256px;
+  transition-duration: 400ms;
 }
 
 #photo-roll-navigation {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 /* 
