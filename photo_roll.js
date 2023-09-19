@@ -23,28 +23,39 @@ function getPhotoRollWidth() {
 function prevPhoto() {
   photoIndex -= 1;
 
-  if (photoIndex < 0) {
-    /* get photoIndex length, minus 1, to account for indexing
-     starting with 0 */
-    photoIndex = photoList.length - 1;
-    photoPosition = getPhotoRollWidth();
-    photoRoll.style.left = `${photoPosition}` + "px";
-  } else {
-    console.log(photoList[photoIndex]);
+  // if (photoIndex < 0) {
+  //   /* get photoIndex length, minus 1, to account for indexing
+  //    starting with 0 */
+  //   photoIndex = photoList.length - 1;
+  //   photoPosition = getPhotoRollWidth();
+  //   photoRoll.style.left = `${photoPosition}` + "px";
+  // } else {
+  console.log(photoList[photoIndex]);
 
-    let photoSelected = document.getElementById(photoList[photoIndex]);
+  let photoSelected = document.getElementById(photoList[photoIndex]);
 
-    photoSelected.classList.toggle("selected");
-
-    photoPosition -= photoSelected.offsetWidth;
-    photoRoll.style.left = `-${photoPosition}` + "px";
-
-    console.log(`PHOTOSELECTED OFFSETWIDTH: ${photoPosition}`);
+  for (i = 0; i < photoList.length; i++) {
+    if (i != photoIndex) {
+      let photoSelected = document.getElementById(photoList[i]);
+      photoSelected.classList.remove("selected");
+    } else {
+      photoSelected.classList.add("selected");
+    }
   }
+
+  // photoSelected.classList.toggle("selected");
+
+  photoPosition -= photoSelected.offsetWidth;
+  photoRoll.style.left = `-${photoPosition}` + "px";
+
+  console.log(`PHOTOSELECTED OFFSETWIDTH: ${photoPosition}`);
+  // }
 }
 
 function nextPhoto() {
   photoIndex += 1;
+
+  let photoSelected = document.getElementById(photoList[photoIndex]);
 
   if (photoIndex > photoList.length - 1) {
     console.log("Photo limit exceeded");
@@ -52,9 +63,16 @@ function nextPhoto() {
     photoPosition = 0;
     photoRoll.style.left = "0px";
   } else {
-    let photoSelected = document.getElementById(photoList[photoIndex]);
+    for (i = 0; i < photoList.length; i++) {
+      if (i != photoIndex) {
+        let photoSelected = document.getElementById(photoList[i]);
+        photoSelected.classList.remove("selected");
+      } else {
+        photoSelected.classList.add("selected");
+      }
+    }
 
-    photoSelected.classList.toggle("selected");
+    // photoSelected.classList.toggle("selected");
 
     photoPosition += photoSelected.offsetWidth;
     photoRoll.style.left = `-${photoPosition}` + "px";
