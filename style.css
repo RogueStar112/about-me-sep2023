@@ -18,7 +18,7 @@ header nav {
   place-items: center;
 }
 
-nav a {
+nav > * {
   background-color: maroon;
   color: white;
   padding: 10px;
@@ -52,7 +52,9 @@ main {
 }
 
 #photo-roll-container {
+  position: relative;
   width: 100vw;
+  height: 256px;
 }
 
 #photo-roll {
@@ -77,9 +79,103 @@ footer {
   margin-bottom: 25px;
 }
 
+#biography h2 {
+  background-color: maroon;
+  color: white;
+  padding: 20px;
+
+  background: rgb(128, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(128, 0, 0, 1) 0%,
+    rgba(128, 0, 0, 0) 100%
+  );
+
+  margin-bottom: 0;
+}
+
+#biography-about-me {
+  padding: 10px;
+  color: white;
+  background-color: rgb(107, 0, 0);
+
+  background: rgb(107, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(107, 0, 0, 1) 0%,
+    rgba(107, 0, 0, 0) 100%
+  );
+}
+
+#fun-facts {
+  margin-top: 10px;
+
+  background-color: maroon;
+  color: white;
+  padding: 20px;
+
+  background: rgb(128, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(128, 0, 0, 1) 0%,
+    rgba(128, 0, 0, 0) 100%
+  );
+}
+
+.descriptor-bg {
+  padding: 10px;
+  color: white;
+  background-color: rgb(107, 0, 0);
+
+  background: rgb(107, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(107, 0, 0, 1) 0%,
+    rgba(107, 0, 0, 0) 100%
+  );
+}
+
+section p {
+  margin: 0;
+}
+
+#prev-btn {
+  position: absolute;
+  left: -200px;
+  top: 50%;
+}
+
+#next-btn {
+  position: absolute;
+  right: 40%;
+  top: 50%;
+}
+
+#photo-roll-navigation button {
+  scale: 8;
+  padding: 0;
+  border: none;
+  background: none;
+  z-index: 999;
+  transition-duration: 200ms;
+  opacity: 0.2;
+}
+
+#photo-roll-navigation button:hover {
+  scale: 8.5;
+  transition-duration: 200ms;
+}
+
 /* 
 Note; Colours taken from Tailwind
 
 Source: https://tailwind-to-css.vercel.app/
 
+
+CSS Gradient Tool
+Source: https://cssgradient.io/
+
+
+Removing border from buttons
+Source: https://stackoverflow.com/questions/11497094/remove-border-from-buttons
 */

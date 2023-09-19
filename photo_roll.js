@@ -1,6 +1,6 @@
 let photoIndex = 0;
 
-let photoList = ["img_1", "img_2", "img_3", "img_4", "img_5"];
+let photoList = ["img_1", "img_2", "img_3", "img_4", "img_5", "img_6"];
 
 let unselectedPhotos = document.querySelectorAll(".unselected");
 
