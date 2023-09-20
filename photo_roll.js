@@ -1,4 +1,4 @@
-let photoIndex = 0;
+let photoIndex = -1;
 
 let photoList = ["img_1", "img_2", "img_3", "img_4", "img_5", "img_6"];
 
@@ -32,13 +32,6 @@ function getPhotoRollWidth() {
 function prevPhoto() {
   photoIndex -= 1;
 
-  // if (photoIndex < 0) {
-  //   /* get photoIndex length, minus 1, to account for indexing
-  //    starting with 0 */
-  //   photoIndex = photoList.length - 1;
-  //   photoPosition = getPhotoRollWidth();
-  //   photoRoll.style.left = `${photoPosition}` + "px";
-  // } else {
   console.log(photoList[photoIndex]);
 
   let photoSelected = document.getElementById(photoList[photoIndex]);
@@ -49,6 +42,9 @@ function prevPhoto() {
   for (i = 0; i < photoList.length; i++) {
     if (i != photoIndex) {
       let photoSelected = document.getElementById(photoList[i]);
+      let descriptionSelected = document.getElementById(
+        descriptionList[photoIndex]
+      );
 
       photoSelected.classList.remove("selected");
       descriptionSelected.classList.remove("selected");
@@ -79,7 +75,7 @@ function nextPhoto() {
 
   if (photoIndex > photoList.length - 1) {
     console.log("Photo limit exceeded");
-    photoIndex = 0;
+    photoIndex = -1;
     photoPosition = 0;
     photoRoll.style.left = "0px";
   } else {

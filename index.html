@@ -8,6 +8,12 @@
 
     <script src="quiz.js" defer></script>
     <script src="photo_roll.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -41,7 +47,7 @@
             </button>
           </div>
 
-          <div id="photo-roll" aria-label="photo-roll">
+          <div id="photo-roll" aria-label="photo-roll" class="overflow-width">
             <div class="image-container">
               <img class="unselected" id="img_1" src="images/me1.jpg" alt="" />
 
@@ -81,7 +87,7 @@
               />
 
               <div class="image-descriptor" id="desc_3">
-                <h2 class="image-descriptor-header">The campus I go to</h2>
+                <h2 class="image-descriptor-header">School by the Lake</h2>
 
                 <p class="image-descriptor-description">
                   It's such pretty scenery! This is near the Science Park.
@@ -89,7 +95,7 @@
               </div>
             </div>
 
-            <div class="image-container">
+            <!-- <div class="image-container">
               <img
                 class="unselected"
                 id="img_4"
@@ -104,16 +110,40 @@
                   Tried to take a photo of the sunset.
                 </p>
               </div>
+            </div> -->
+
+            <div class="image-container">
+              <img
+                class="unselected"
+                id="img_4"
+                src="images/campus.jpg"
+                alt=""
+              />
+
+              <div class="image-descriptor" id="desc_4">
+                <h2 class="image-descriptor-header">The campus</h2>
+
+                <p class="image-descriptor-description">
+                  A picture of the TE campus I go to!
+                </p>
+              </div>
             </div>
 
             <div class="image-container">
-              <img class="unselected" id="img_5" src="images/me5.JPG" alt="" />
+              <img
+                class="unselected"
+                id="img_5"
+                src="images/bird6.JPG"
+                alt=""
+              />
 
               <div class="image-descriptor" id="desc_5">
-                <h2 class="image-descriptor-header">Another selfie</h2>
+                <h2 class="image-descriptor-header">
+                  The park with a bird statue
+                </h2>
 
                 <p class="image-descriptor-description">
-                  It's me behind the park.
+                  This is from the same nature reserve as the second photo!
                 </p>
               </div>
             </div>
@@ -122,17 +152,15 @@
               <img
                 class="unselected"
                 id="img_6"
-                src="images/bird6.JPG"
+                src="images/nature7.JPG"
                 alt=""
               />
 
               <div class="image-descriptor" id="desc_6">
-                <h2 class="image-descriptor-header">
-                  The park with a bird statue
-                </h2>
+                <h2 class="image-descriptor-header">The park at sunset</h2>
 
                 <p class="image-descriptor-description">
-                  This is from the same nature reserve as the second photo!
+                  Feels like scenery out of The Witcher games!
                 </p>
               </div>
             </div>
