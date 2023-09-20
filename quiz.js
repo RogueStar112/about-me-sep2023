@@ -78,7 +78,7 @@ function doQuiz() {
     alert(`You got ${points}/5 questions correct!`);
 
     promptGuessingGame = confirm(
-      "Would you like to do a number guessing game?"
+      "Would you like to do a number guessing game??"
     );
 
     if (promptGuessingGame === true) {
