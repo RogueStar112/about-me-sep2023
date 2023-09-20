@@ -277,6 +277,20 @@ main {
     rgba(128, 0, 0, 0) 100%
   );
 }
+
+article {
+  position: relative;
+}
+
+.icon-br {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  scale: 3;
+  opacity: 0.25;
+  rotate: -14deg;
+}
+
 /* 
 Note; Colours taken from Tailwind
 
