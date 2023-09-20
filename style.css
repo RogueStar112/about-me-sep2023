@@ -246,10 +246,13 @@ h2 {
   max-height: 512px;
 }
 
-#country-pin {
+#country-pin-manila {
   position: absolute;
   left: 44.2%;
   top: 39.2%;
+}
+
+.country-place {
   background-color: maroon;
   color: white;
 
