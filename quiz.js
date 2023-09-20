@@ -76,7 +76,83 @@ function doQuiz() {
     }
 
     alert(`You got ${points}/5 questions correct!`);
+
+    promptGuessingGame = confirm(
+      "Would you like to do a number guessing game?"
+    );
+
+    if (promptGuessingGame === true) {
+      numberGame = doNumberGuessingGame();
+    }
+
+    if (numberGame == true) {
+      points += 1;
+    }
+
+    let q7 = prompt(
+      "Last question: Name one of Demie's favourite Top 10 Songs, including the artist."
+    );
+
+    let top10songs = document.getElementById("top-ten-songs").childNodes;
+
+    let q7_answersList = [];
+
+    for (i = 0; i < top10songs.length; i++) {
+      q7_answersList.push(top10songs[i].innerHTML);
+    }
+
+    if (q7_answersList.indexOf(`${q7}`)) {
+      points += 1;
+      alert("Congratulations! You got one of the songs on my list!");
+    } else {
+      alert("Incorrect!");
+    }
+
+    console.log(q7_answersList);
+
+    alert(`GRAND TOTAL: You got ${points}/7 questions correct!`);
   } else {
     alert(`Okay ${q_name}, No need to do the quiz if you don't want to.`);
   }
+}
+
+function doNumberGuessingGame() {
+  alert(
+    "Now, let's do a number guessing game. I will generate a random number between 1 to 10. Ready?"
+  );
+
+  // added +1 to ensure the number generated is between 1 to 10.
+  let randomNumber = Math.floor(Math.random() * 10) + 1;
+  let guessingAttempts = 4;
+  let wonGame = false;
+
+  while (guessingAttempts > 0 && wonGame === false) {
+    let numberGuess = parseInt(prompt("Guess the number from 1 to 10"));
+
+    if (numberGuess > randomNumber) {
+      guessingAttempts -= 1;
+      alert(
+        `Your guess is too high. You have ${guessingAttempts} attempts left.`
+      );
+    } else if (numberGuess < randomNumber) {
+      guessingAttempts -= 1;
+      alert(
+        `Your guess is too low. You have ${guessingAttempts} attempts left.`
+      );
+    } else if (parseInt(numberGuess) == NaN) {
+      alert("Please put a number.");
+    } else if (numberGuess === randomNumber) {
+      wonGame = true;
+    }
+  }
+
+  if (guessingAttempts == 0) {
+    alert(`The number is: ${randomNumber}. Better luck next time.`);
+  }
+
+  if (wonGame === true) {
+    alert(`You guessed correctly! The number is: ${randomNumber}!`);
+  }
+
+  return wonGame;
 }
