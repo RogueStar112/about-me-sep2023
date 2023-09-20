@@ -264,6 +264,19 @@ h2 {
 main {
   position: relative;
 }
+
+.article-bg {
+  margin-top: 10px;
+  background-color: maroon;
+  color: white;
+  padding: 20px;
+  background: rgb(128, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(128, 0, 0, 1) 0%,
+    rgba(128, 0, 0, 0) 100%
+  );
+}
 /* 
 Note; Colours taken from Tailwind
 
