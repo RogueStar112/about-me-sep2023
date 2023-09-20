@@ -93,15 +93,22 @@ function doQuiz() {
       "Last question: Name one of Demie's favourite Top 10 Songs, including the artist."
     );
 
+    // Gets the values from my top 10 song list, (li elements).
     let top10songs = document.getElementById("top-ten-songs").childNodes;
 
     let q7_answersList = [];
 
+    // and adds them to my answer list!
     for (i = 0; i < top10songs.length; i++) {
-      q7_answersList.push(top10songs[i].innerHTML);
+      if (top10songs[i].innerHTML != undefined) {
+        q7_answersList.push(top10songs[i].innerHTML.toLowerCase());
+      } else {
+        // do nothing
+      }
     }
 
-    if (q7_answersList.indexOf(`${q7}`)) {
+    // if answer is on the list (-1 is false; not on the list.)
+    if (q7_answersList.indexOf(`${q7.toLowerCase()}`) != -1) {
       points += 1;
       alert("Congratulations! You got one of the songs on my list!");
     } else {
