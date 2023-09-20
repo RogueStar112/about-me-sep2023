@@ -100,9 +100,11 @@ footer {
 }
 
 #biography-about-me {
-  padding: 10px;
+  padding: 20px;
   color: white;
   background-color: rgb(107, 0, 0);
+
+  text-align: justify;
 
   background: rgb(107, 0, 0);
   background: linear-gradient(
@@ -228,6 +230,36 @@ h2 {
   font-size: 24px;
 }
 
+#country-map-container {
+  display: inline-block;
+  position: relative;
+  float: right;
+  /* height: 100%;
+  width: 100%; */
+}
+
+#country-map {
+  /* position: absolute; */
+  right: 0;
+  top: 20%;
+
+  max-height: 512px;
+}
+
+#country-pin {
+  position: absolute;
+  left: 44.2%;
+  top: 39.2%;
+  background-color: maroon;
+  color: white;
+
+  border-radius: 999px;
+  padding: 3px;
+}
+
+main {
+  position: relative;
+}
 /* 
 Note; Colours taken from Tailwind
 
