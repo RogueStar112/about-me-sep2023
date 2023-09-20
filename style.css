@@ -247,9 +247,10 @@ h2 {
 }
 
 #country-pin-manila {
+  /* point towards Manila*/
   position: absolute;
-  left: 44.2%;
-  top: 39.2%;
+  left: 44.23%;
+  top: 34.25%;
 }
 
 .country-place {

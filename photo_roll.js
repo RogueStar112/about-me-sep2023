@@ -39,18 +39,24 @@ function prevPhoto() {
     descriptionList[photoIndex]
   );
 
-  for (i = 0; i < photoList.length; i++) {
-    if (i != photoIndex) {
-      let photoSelected = document.getElementById(photoList[i]);
-      let descriptionSelected = document.getElementById(
-        descriptionList[photoIndex]
-      );
+  if (photoIndex < 0) {
+    photoIndex = -1;
+    photoPosition = 0;
+    photoRoll.style.left = "0px";
 
-      photoSelected.classList.remove("selected");
-      descriptionSelected.classList.remove("selected");
-    } else {
-      photoSelected.classList.add("selected");
-      descriptionSelected.classList.add("selected");
+    console.log("PI INDEX UNDERFLOW", photoIndex);
+  } else {
+    for (i = 0; i < photoList.length; i++) {
+      if (i != photoIndex) {
+        let photoSelected = document.getElementById(photoList[i]);
+        let descriptionSelected = document.getElementById(descriptionList[i]);
+
+        photoSelected.classList.remove("selected");
+        descriptionSelected.classList.remove("selected");
+      } else {
+        photoSelected.classList.add("selected");
+        descriptionSelected.classList.add("selected");
+      }
     }
   }
 
