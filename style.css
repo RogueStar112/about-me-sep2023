@@ -5,6 +5,7 @@ body {
   background-color: grey;
   position: static;
   font-family: Verdana;
+  overflow-x: hidden;
 }
 
 header {
@@ -258,7 +259,7 @@ h2 {
   color: white;
 
   border-radius: 999px;
-  padding: 3px;
+  padding: 6px;
 }
 
 main {
