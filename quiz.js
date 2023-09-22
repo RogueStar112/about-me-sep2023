@@ -82,17 +82,49 @@ function doQuiz() {
 
     let q7_answersList = [];
 
+    // swapped answers mean, the artist and the song name switch places.
+    let q7_answersList_swapped = [];
+
     // and adds them to my answer list!
     for (i = 0; i < top10songs.length; i++) {
+      // removes any undefined HTML elements, isolating the li text.
       if (top10songs[i].innerHTML != undefined) {
         q7_answersList.push(top10songs[i].innerHTML.toLowerCase());
+
+        // get the song's artist and song name. returns two elements.
+        let swappedSongArray = top10songs[i].innerHTML.split(" - ");
+
+        // temporarily store the first element, to prepare for the swap.
+        let swappedSongArray_store = swappedSongArray[0];
+
+        // swap the positions of the artist and song name.
+        swappedSongArray[0] = swappedSongArray[1];
+        swappedSongArray[1] = swappedSongArray_store;
+
+        // add the ' - ' between the artist and song name.
+        swappedSongArray.splice(1, 0, " - ");
+
+        swappedSongString = swappedSongArray.join("");
+
+        swappedSongString = swappedSongString.toLowerCase();
+
+        // swappedSongString = swappedSongString.replace(",", "");
+
+        console.log("SSA", swappedSongArray);
+        console.log(swappedSongString);
+
+        q7_answersList_swapped.push(swappedSongString);
       } else {
         // do nothing
       }
     }
 
     // if answer is on the list (-1 is false; not on the list.)
-    if (q7_answersList.indexOf(`${q7.toLowerCase()}`) != -1) {
+    //
+    if (
+      q7_answersList.indexOf(`${q7.toLowerCase()}`) != -1 ||
+      q7_answersList_swapped.indexOf(`${q7.toLowerCase()}`) != -1
+    ) {
       points += 1;
       alert("Congratulations! You got one of the songs on my list!");
     } else {
