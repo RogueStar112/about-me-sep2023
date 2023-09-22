@@ -62,7 +62,8 @@ function prevPhoto() {
 
   // photoSelected.classList.toggle("selected");
 
-  photoPosition -= photoSelected.offsetWidth;
+  // added 20 (pixels) to account for descriptor margin.
+  photoPosition -= photoSelected.offsetWidth + 20;
   photoRoll.style.left = `-${photoPosition}` + "px";
 
   console.log(`PHOTOSELECTED OFFSETWIDTH: ${photoPosition}`);
@@ -77,15 +78,17 @@ function nextPhoto() {
     descriptionList[photoIndex]
   );
 
-  console.log("Description selected " + descriptionList[photoIndex]);
+  // console.log("Description selected " + descriptionList[photoIndex]);
 
   if (photoIndex > photoList.length - 1) {
     console.log("Photo limit exceeded");
+
     photoIndex = -1;
     photoPosition = 0;
     photoRoll.style.left = "0px";
   } else {
     for (i = 0; i < photoList.length; i++) {
+      // This if-else statement basically adds the 'selected' class to the indexed element.
       if (i != photoIndex) {
         let photoSelected = document.getElementById(photoList[i]);
         let descriptionSelected = document.getElementById(descriptionList[i]);
@@ -100,9 +103,14 @@ function nextPhoto() {
 
     // photoSelected.classList.toggle("selected");
 
-    photoPosition += photoSelected.offsetWidth;
-    photoRoll.style.left = `-${photoPosition}` + "px";
-
+    if (photoIndex == 0) {
+      // empty code block - so that the photoPosition doesn't move on the first image.
+      // This is to make sure the photo roll is in line with the text divs below.
+    } else {
+      // added 20 (pixels) to account for descriptor margin.
+      photoPosition += photoSelected.offsetWidth + 20;
+      photoRoll.style.left = `-${photoPosition}` + "px";
+    }
     console.log(`PHOTOSELECTED OFFSETWIDTH: ${photoPosition}`);
     console.log("PHOTO INDEX: " + photoIndex);
   }
