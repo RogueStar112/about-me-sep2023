@@ -1,56 +1,26 @@
-// Okay this is a cheeky global variable, but I don't know how to work around it.
-let points = 0;
-
 function askQuestion(
   question,
   answer,
   msgIfCorrect = "Correct!",
   msgIfWrong = "Wrong!"
 ) {
-  let userInput = prompt(`${question}`).toLowerCase();
+  let userInput = prompt(`${question}`);
+
   let answeredCorrectly = false;
 
-  let isAnswerArray = Array.isArray(answer);
-
-  if (isAnswerArray) {
-    for (i = 0; i < answer.length; i++) {
-      answer[i] = answer[i].toLowerCase();
-    }
+  if (userInput.toLowerCase() == answer.toLowerCase()) {
+    answeredCorrectly = true;
+    alert(`${msgIfCorrect}`);
+    // this return either true or false.
+    return answeredCorrectly;
   } else {
-    answer = answer.toLowerCase();
-  }
-
-  // if the answer is an array..
-  if (isAnswerArray) {
-    // if the userInput is in the array of answers.. (it's correct)
-    if (answer.indexOf(`${userInput}`) != -1) {
-      answeredCorrectly = true;
-      alert(`${msgIfCorrect}`);
-      // this return either true or false.
-      points++;
-      return answeredCorrectly;
-    } else {
-      alert(`${msgIfWrong}`);
-      // returns false
-      return answeredCorrectly;
-    }
-  } else {
-    if (answer === userInput) {
-      answeredCorrectly = true;
-      points++;
-      alert(`${msgIfCorrect}`);
-      return answeredCorrectly;
-    } else {
-      alert(`${msgIfWrong}`);
-
-      // returns false
-      return answeredCorrectly;
-    }
+    alert(`${msgIfWrong}`);
+    return answeredCorrectly;
   }
 }
 
 function doQuiz() {
-  points = 0;
+  let points = 0;
 
   let q_name = prompt("What is your name?");
 
@@ -59,24 +29,56 @@ function doQuiz() {
   );
 
   if (confirmQuiz === true) {
-    let q1 = askQuestion("Demie has worked before in archaeology. Yes/No?", [
-      "no",
-      "n",
-    ]);
+    let q1 = prompt("Demie has worked before in archaeology. Yes/No?");
 
-    let q2 = askQuestion("Demie is double-jointed. Yes/No?", ["yes", "y"]);
+    if (q1.toLowerCase() == "n" || q1.toLowerCase() == "no") {
+      alert("Correct! I've not worked in Archaeology before.");
+      points += 1;
+    } else {
+      alert("Incorrect! I've not worked in Archaeology.");
+    }
 
-    let q3 = askQuestion("I like EDM music. Yes/No?", ["yes", "y"]);
+    let q2 = prompt("Demie is double-jointed. Yes/No?");
 
-    let q4 = askQuestion("I unironically use Red theme on my VSCode. Yes/No?", [
-      "yes",
-      "y",
-    ]);
+    if (q2.toLowerCase() == "y" || q2.toLowerCase() == "yes") {
+      alert("Correct! I'm double jointed in my fingers!");
+      points += 1;
+    } else {
+      alert("Incorrect! I'm double jointed in my fingers!");
+    }
 
-    let q5 = askQuestion("My favourite dish is Thai Green Curry. Yes/No?", [
-      "yes",
-      "y",
-    ]);
+    let q3 = prompt("I like EDM music. Yes/No?");
+
+    if (q3.toLowerCase() == "y" || q3.toLowerCase() == "yes") {
+      alert(
+        "Correct! Alan Walker, Avicii, and Gryffin are my fav EDM artists!"
+      );
+      points += 1;
+    } else {
+      alert("Incorrect! I DO like EDM music!");
+    }
+
+    let q4 = prompt("I unironically use Red theme on my VSCode. Yes/No?");
+
+    if (q4.toLowerCase() == "y" || q4.toLowerCase() == "yes") {
+      alert(
+        "Correct! Red theme gives me very cool vibes. (Even though it's warm)"
+      );
+      points += 1;
+    } else {
+      alert("Incorrect! I use red theme. Muhahaha.");
+    }
+
+    let q5 = prompt("My favourite dish is Thai Green Curry. Yes/No?");
+
+    if (q5.toLowerCase() == "y" || q5.toLowerCase() == "yes") {
+      alert(
+        "Correct! Thai Green Curry is spicy, sweet, and savoury, all in one!"
+      );
+      points += 1;
+    } else {
+      alert("Incorrect! I love Thai green curry!");
+    }
 
     alert(`You got ${points}/5 questions correct!`);
 
@@ -126,6 +128,11 @@ function doQuiz() {
         swappedSongString = swappedSongArray.join("");
 
         swappedSongString = swappedSongString.toLowerCase();
+
+        // swappedSongString = swappedSongString.replace(",", "");
+
+        console.log("SSA", swappedSongArray);
+        console.log(swappedSongString);
 
         q7_answersList_swapped.push(swappedSongString);
       } else {

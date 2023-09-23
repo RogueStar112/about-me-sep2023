@@ -296,6 +296,10 @@ button {
   border: 0;
 }
 
+.image-container {
+  overflow: hidden;
+}
+
 /* .image-descriptor-description {
   text-align: justify;
 } */
