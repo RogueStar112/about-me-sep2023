@@ -1,12 +1,7 @@
 // Okay this is a cheeky global variable, but I don't know how to work around it.
 let points = 0;
 
-function askQuestion(
-  question,
-  answer,
-  msgIfCorrect = "Correct!",
-  msgIfWrong = "Wrong!"
-) {
+function askQuestion(question, answer, msgIfCorrect = "", msgIfWrong = "") {
   let userInput = prompt(`${question}`).toLowerCase();
   let answeredCorrectly = false;
 
@@ -25,12 +20,12 @@ function askQuestion(
     // if the userInput is in the array of answers.. (it's correct)
     if (answer.indexOf(`${userInput}`) != -1) {
       answeredCorrectly = true;
-      alert(`${msgIfCorrect}`);
+      alert(`Correct! ${msgIfCorrect}`);
       // this return either true or false.
       points++;
       return answeredCorrectly;
     } else {
-      alert(`${msgIfWrong}`);
+      alert(`Incorrect! ${msgIfWrong}`);
       // returns false
       return answeredCorrectly;
     }
@@ -38,10 +33,10 @@ function askQuestion(
     if (answer === userInput) {
       answeredCorrectly = true;
       points++;
-      alert(`${msgIfCorrect}`);
+      alert(`Correct! ${msgIfCorrect}`);
       return answeredCorrectly;
     } else {
-      alert(`${msgIfWrong}`);
+      alert(`Incorrect! ${msgIfWrong}`);
 
       // returns false
       return answeredCorrectly;

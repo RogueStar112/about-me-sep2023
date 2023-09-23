@@ -300,6 +300,30 @@ button {
   overflow: hidden;
 }
 
+.top-radius {
+  border-radius: 30px 0 0 0;
+}
+
+.bottom-radius {
+  border-radius: 0 0 0 30px;
+}
+
+/* Scrapped plans for photos to have a radius */
+
+/* .photo-radius {
+  border-radius: 30px;
+}
+
+.image-container:first-child {
+  border-radius: 30px 0 0 30px;
+}
+
+/* .image-descriptor:first-child {
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0 30px 30px 0;
+} */
+
 /* .image-descriptor-description {
   text-align: justify;
 } */
